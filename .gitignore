@@ -10,6 +10,7 @@ bin/
 memos
 
 .DS_Store
+memos_prod.db
 
 # Jetbrains
 .idea
