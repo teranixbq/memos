@@ -40,6 +40,13 @@ func NewFrontendService(profile *profile.Profile, store *store.Store) *FrontendS
 
 func (s *FrontendService) Serve(_ context.Context, e *echo.Echo) {
 	frontendFS := getFileSystem("dist")
+
+	// Check if index.html exists in the embedded files.
+	// If it doesn't exist, it means the frontend hasn't been built.
+	if _, err := frontendFS.Open("index.html"); err != nil {
+		return
+	}
+
 	skipper := func(c *echo.Context) bool {
 		requestPath := c.Request().URL.Path
 		if shouldSkipFrontendStatic(requestPath) {
