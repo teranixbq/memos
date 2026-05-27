@@ -36,5 +36,6 @@ frontend-release:
 publish:
 	cd web && pnpm install && pnpm release
 	go build -o build/memos ./cmd/memos
+	go run ./cmd/memos
 
 
