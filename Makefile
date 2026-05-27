@@ -1,5 +1,5 @@
 # Root Makefile for the memos repository.
-# Use this to run the backend and frontend as separate development services.
+# Use this to run the backend and frontend as separate development servicesd.
 
 .PHONY: help backend backend-build frontend-install frontend frontend-build frontend-release publish
 
@@ -36,3 +36,5 @@ frontend-release:
 publish:
 	cd web && pnpm install && pnpm release
 	go build -o build/memos ./cmd/memos
+
+
