@@ -17,7 +17,7 @@ import (
 	"github.com/usememos/memos/store"
 )
 
-//go:embed dist/*
+//go:embed dist
 var embeddedFiles embed.FS
 
 const (
